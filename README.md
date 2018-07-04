@@ -1,8 +1,8 @@
 # ShopWithUs
 
-Server - Apache Tomcat
-Database - MySql
-IDE - Eclipse Oxygen
+Server - Apache Tomcat.
+Database - MySql.
+IDE - Eclipse Oxygen.
 
 Other - Xampp,Brackets
 
