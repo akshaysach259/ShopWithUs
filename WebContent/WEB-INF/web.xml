@@ -25,7 +25,6 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/logServlet</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <servlet-name>Uploadservlet</servlet-name>
     <servlet-class>com.candidjava.servlet.upload.UploadServlet</servlet-class>
@@ -33,5 +32,73 @@
   <servlet-mapping>
     <servlet-name>Uploadservlet</servlet-name>
     <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddProduct</servlet-name>
+    <servlet-class>jdbc.AddProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProduct</servlet-name>
+    <url-pattern>/AddProduct</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditServlet</display-name>
+    <servlet-name>EditServlet</servlet-name>
+    <servlet-class>com.candidjava.servlet.upload.EditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditServlet</servlet-name>
+    <url-pattern>/EditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteServlet</display-name>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>com.candidjava.servlet.upload.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/DeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cart</display-name>
+    <servlet-name>Cart</servlet-name>
+    <servlet-class>jdbc.Cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cart</servlet-name>
+    <url-pattern>/Cart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>delete_cart</display-name>
+    <servlet-name>delete_cart</servlet-name>
+    <servlet-class>com.candidjava.servlet.upload.delete_cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete_cart</servlet-name>
+    <url-pattern>/delete_cart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddressDetails</display-name>
+    <servlet-name>AddressDetails</servlet-name>
+    <servlet-class>jdbc.AddressDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddressDetails</servlet-name>
+    <url-pattern>/AddressDetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>payment_info</display-name>
+    <servlet-name>payment_info</servlet-name>
+    <servlet-class>jdbc.payment_info</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>payment_info</servlet-name>
+    <url-pattern>/payment_info</url-pattern>
   </servlet-mapping>
 </web-app>

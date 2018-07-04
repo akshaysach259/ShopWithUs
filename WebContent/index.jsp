@@ -42,6 +42,8 @@
                                 </a>
                                 
                                 <a class="dropdown-item" data-toggle="modal" data-target="#signupModal" href="#">Sign Up</a>
+                                
+                                <a class="dropdown-item" data-toggle="modal" data-target="#AdminModal" href="#">Admin</a>
                             </div>
                         </li>
                     </ul>
@@ -84,6 +86,45 @@
     </div>
   </div>
 </div>
+<!-- Admin Modal -->
+
+<div class="modal fade" id="AdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  name="AdminModal" action="Admin" method="post" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  
+  <br>
+  
+  <button type="submit" class="btn btn-block btn-def">Submit</button>
+</form>
+<div class="text-center">
+<button type="submit" class="btn  btn-danger"  data-toggle="modal" data-target="#signupModal" data-dismiss="modal" >Don't Have An Account</button>
+      </div>
+      </div>
+      <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
 
        <!-- Modal Sign Up -->
        
@@ -100,8 +141,7 @@
         <form name="form" action="Registration" method="post" onsubmit="return validate()">
         <div class="form-group">
     <label for="">Name</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
-   
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">	 
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -142,7 +182,7 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" href="#">Home</a>
+                            <a class="nav-link waves-effect waves-light" href="index.jsp">Home</a>
                         </li>
                         <!-- Dropdown -->
                         <li class="nav-item dropdown">
@@ -523,7 +563,7 @@
   
      </div>
    <footer class="footermain">
-   Copyright © 2018 Mimity All right reserved 
+   Copyright © 2018 ShopWith us All right reserved Akshay Sachdeva & Aditya Sharma 
    </footer>
    
    

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,9 +15,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 /**
  * Servlet implementation class Uploadservlet
  */
+
+@WebServlet()
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final String UPLOAD_DIRECTORY = "d:/uploads";
+	private final String UPLOAD_DIRECTORY = "../WebContent/images/uploads";
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(ServletFileUpload.isMultipartContent(request)){
@@ -31,6 +34,9 @@ public class UploadServlet extends HttpServlet {
                         fsize = new Long(item.getSize()).toString();
                         ftype = item.getContentType();
                         item.write( new File(UPLOAD_DIRECTORY + File.separator + fname));
+                    }
+                    else {
+                    	System.out.println(item.getString());
                     }
                 }
                //File uploaded successfully
@@ -49,5 +55,6 @@ public class UploadServlet extends HttpServlet {
         request.getRequestDispatcher("/result.jsp").forward(request, response);
      
     }		
-		// TODO Auto-generated method stub
+		
+	
 	}

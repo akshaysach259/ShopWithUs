@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
+
+
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -44,8 +46,9 @@ public class Login extends HttpServlet {
 			Connection con = ConnectionProvider.getConn();
     		String email = request.getParameter("email");
     		String password = request.getParameter("password");
-    		String sql = "select * from users where email=? and password=?";
     		
+    		String sql = "select * from users where email=? and password=?";
+    		String userid = null;
     		String name = null;
     		String dbemail = null;
     		String dbpassword = null;
@@ -59,7 +62,7 @@ public class Login extends HttpServlet {
 			
 			
 			while(rs.next()) {
-				
+				userid = rs.getString(1);
 				name = rs.getString(2);
 				dbemail = rs.getString(3);
 				dbpassword = rs.getString(4);
@@ -68,9 +71,17 @@ public class Login extends HttpServlet {
 			
 			if(email.equals(dbemail) && password.equals(dbpassword) ) {
 				
-					
-				request.setAttribute("name", name);
-				request.getRequestDispatcher("header.jsp").forward(request, response);
+			
+				
+				
+				HttpSession session=request.getSession();  
+		        session.setAttribute("uname",name);
+		        session.setAttribute("uid",userid);
+		        
+		      
+		        
+			response.sendRedirect("Message.jsp");
+				
 		
 				
 				

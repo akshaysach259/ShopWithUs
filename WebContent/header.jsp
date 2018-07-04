@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   
+ <%@page import ="java.io.PrintWriter"  %>
+ <%@page import="javax.servlet.*"%>  
+ <%@page import= "javax.servlet.http.*" %>  
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +19,13 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<%
+	 
+String uname = (String)session.getAttribute("uname");
 
 
+
+%>
    <!--Navbar -->
    <div>
         <nav class="mb-4 navbar navbar-expand-lg navbar-dark navbar1 navbar-fixed-top">
@@ -26,7 +38,7 @@
                     <ul class="navbar-nav ml-auto">
                     
                         <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#contact"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
                         </li>
                         
                         <li class="nav-item">
@@ -36,7 +48,7 @@
                             <a class="nav-link" href="#"><i class="fa fa-question-circle"></i> Whats This !</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <%=  request.getAttribute("name") %> </a>
+                            <a class="nav-link " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>Welcome, <%  out.println(uname);%> </a>
                             
                               
                     </ul>
@@ -54,80 +66,25 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" href="#">Home</a>
+                            <a class="nav-link waves-effect waves-light" href="Message.jsp">Home</a>
                         </li>
                         <!-- Dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clothing & Footwear </a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Nike</a>
-                                <a class="dropdown-item" href="#">Ralph Lauren</a>
-                                <a class="dropdown-item" href="#">Old Navy</a>
-                                <a class="dropdown-item" href="#">Forever 21</a>
-                                <a class="dropdown-item" href="#">American Eagle</a>
-                                <a class="dropdown-item" href="#">PacSun</a>
-                                <a class="dropdown-item" href="#">H&M</a>
-                                <a class="dropdown-item" href="#">Vineyard Vines</a>
-                                <a class="dropdown-item" href="#">Nordstrom</a>
+                            <a href="Message.jsp" class="nav-link " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products </a>
+                            <div class=" dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                                 
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electronics & Gadgets </a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <div class="container-fluid">
-                                <a class="dropdown-item" href="#">Samsung</a>
-                                
-                                <a class="dropdown-item" href="#">Dell</a>
-                                <a class="dropdown-item" href="#">HP</a>
-                                <a class="dropdown-item" href="#">Apple</a>
-                                <a class="dropdown-item" href="#">Canon</a>
-                                <a class="dropdown-item" href="#">Nikon</a>
-                                <a class="dropdown-item" href="#">Sony</a>
-                                <a class="dropdown-item" href="#">GoPro</a>
-                                <a class="dropdown-item" href="#">Sandisk</a>
-                                </div>
-                            </div>
-                            
+        				<li class="nav-item">
+                            <li class="nav-link"><a href="cart.jsp">View Cart</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Kitchen & Furniture </a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <div class="container-fluid">
-                                <a class="dropdown-item" href="#">Samsung</a>
-                                
-                                <a class="dropdown-item" href="#">Dell</a>
-                                <a class="dropdown-item" href="#">HP</a>
-                                <a class="dropdown-item" href="#">Apple</a>
-                                <a class="dropdown-item" href="#">Canon</a>
-                                <a class="dropdown-item" href="#">Nikon</a>
-                                <a class="dropdown-item" href="#">Sony</a>
-                                <a class="dropdown-item" href="#">GoPro</a>
-                                <a class="dropdown-item" href="#">Sandisk</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bathroom & Toilet </a>
-                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <div class="container-fluid">
-                                <a class="dropdown-item" href="#">Samsung</a>
-                                
-                                <a class="dropdown-item" href="#">Dell</a>
-                                <a class="dropdown-item" href="#">HP</a>
-                                <a class="dropdown-item" href="#">Apple</a>
-                                <a class="dropdown-item" href="#">Canon</a>
-                                <a class="dropdown-item" href="#">Nikon</a>
-                                <a class="dropdown-item" href="#">Sony</a>
-                                <a class="dropdown-item" href="#">GoPro</a>
-                                <a class="dropdown-item" href="#">Sandisk</a>
-                                </div>
-                            </div>
-                        </li>
-                        
-                       
+        				                    
+		                       
                         <li class="nav-item">
-                            <li class="nav-link"><a >Contact Us</a>
+                            <li class="nav-link"><a href="#contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <li class="nav-link"><a href="index.jsp">Logout</a>
                         </li>
                     </ul>
                     </div>
